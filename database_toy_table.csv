@@ -19,7 +19,7 @@ Toy Id,Toy Name,Gender,Age,Price,Availability,Brand
 29,My First LEGO DUPLO Set,,Toddler,19.95,,Lego
 22,Nutbrown Hare,Neutral,Baby,12.99,InStock,CoolKidz
 14,OMG - Gossip Girl Board Game,Female,over8,24.95,InStock,GeekToys
-6,Princess Palace,Female,3_to_5,24.95,InStock,CoolKidz
+6,Princess Palace,Female,3_to_5,24.95,SoldOut,CoolKidz
 10,Princess Training Bicycle,Female,3_to_5,119.95,,SportsFun
 15,Sailboat,Male,over8,24.95,InStock,CoolKidz
 27,Sand Play Set,Neutral,Toddler,24.95,InStock,Modelz
