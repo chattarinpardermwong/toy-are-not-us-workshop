@@ -49,12 +49,12 @@ ${Product_Quantity}    order_quantity
     Click Button    btn_process
 
 กรอกข้อมูลที่อยู่	
-    Input    txt_name  
-    Input    txt_address1  
-    Input    txt_address2  
-    Input    txt_city  
-    Input    txt_province  
-    Input    txt_postcode
+    Input Text    txt_name  
+    Input Text    txt_address1  
+    Input Text    txt_address2  
+    Input Text    txt_city  
+    Input Text    txt_province  
+    Input Text    txt_postcode
     Click Button    btn_deliver
 
 เช็คหน้าชำระเงิน
@@ -71,7 +71,7 @@ ${Product_Quantity}    order_quantity
     ${Actaul_Product_Quantity}    Get Text    title_Quantity
     Should Be Equal As Strings    ${Product_Quantity}    ${Actaul_Product_Quantity}
     Click Element    rd_credit
-    Input    txt_name
-    Input    txt_no_card
-    Input    txt_cvv
+    Input Text    txt_name
+    Input Text    txt_no_card
+    Input Text    txt_cvv
     Click Button    btn_placeorder
