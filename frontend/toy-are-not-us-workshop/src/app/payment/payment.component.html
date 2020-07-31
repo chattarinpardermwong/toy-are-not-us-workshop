@@ -2,26 +2,17 @@
     Payment Methods
 </h2>
 <div class="row">
-    <div class="column" style="background-color:#aaa;">
+    <div class="column" style="">
         <h2>Item</h2>
-        <b id="item_detail">Toy Name </b> by Brand
-        <li> Gender :</li>
-        <li> Age :</li>
-        <li> In Stock / Out Stock</li>
+        <b id="item_detail">Toy Name:{{toy.name}} </b> by Brand
+        <li> Gender : {{toy.name}}</li>
+        <li> Age : {{toy.age}}</li>
+        <li *ngIf="toy.status">InStock</li>
+        <li *ngIf="!toy.status"> OutStock </li>
+
         <li id="quantity_detail"> Quantity</li>
         <p id="price_detail">
-            Price = xxxxxx
-        </p>
-    </div>
-    <div class="column" style="background-color:#aaa;">
-        <h2>Item</h2>
-        <b id="item_detail">Toy Name </b> by Brand
-        <li> Gender :</li>
-        <li> Age :</li>
-        <li> In Stock / Out Stock</li>
-        <li id="quantity_detail"> Quantity</li>
-        <p id="price_detail">
-            Price = xxxxxx
+            Price = {{toy.price}} $
         </p>
     </div>
 </div>

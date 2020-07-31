@@ -11,7 +11,7 @@ import { NetworkService } from '../services/network.service';
 })
 export class ShoppingCartComponent implements OnInit {
   toy:Toy
-  ship :Shipping[]
+  ship :Shipping[] ;
   shipID : number	;
   price :number;
   constructor(private activateRoute:ActivatedRoute , private network:NetworkService) { }
@@ -38,8 +38,8 @@ export class ShoppingCartComponent implements OnInit {
      )
      this.network.getShipping().subscribe(
        data=>{
-         console.log(data)
-         this.ship = data;
+        //  console.log(this.ship.lengt)
+        this.ship  = data
        }
      )
   }

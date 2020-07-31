@@ -13,7 +13,7 @@ const routes: Routes = [
   {path:'toylist', component: ToyListComponent},
   {path:'toylist/toydetail/toyshoping/:id',component: ShoppingCartComponent },
   {path:'toyshoping/shipaddress/:id',component: ShippingAddressComponent},
-  {path:'shipaddress/payment',component: PaymentComponent}
+  {path:'payment/:id',component: PaymentComponent}
 
 
 ];
