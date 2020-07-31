@@ -5,13 +5,17 @@
     <img src="img_girl.jpg" alt="toypic" width="400" height="500" />
 </p>
 <ul>
-    <li>Name : {{toy.name}}</li>
-    <li>Gender : {{toy.gender}}</li>
-    <li>Age : {{toy.age}}</li>
-    <li>Price : {{toy.price}}</li>
-    <li>Shipping Method: Cash on delivery</li>
-    <li *ngIf="toy.status" >In Stock</li>
-    <li *ngIf="!toy.status" >Out Stock</li>
+    <b>
+        Name : 
+    </b>
+    <li class="ml-3" id="title_name">{{toy.name}}</li>
+    Gender : <li class="ml-3" id="gender">{{toy.gender}}</li>
+    Age :  <li class="ml-3" id="age" >{{toy.age}}</li>
+    Price :  <li class="ml-3" id="price">{{toy.price}}</li>
+    <b >Shipping Method: Cash on delivery</b>
+    <br>
+    <span *ngIf="toy.status" >In Stock</span>
+    <span *ngIf="!toy.status" >Out Stock</span>
 
 </ul>
 <h4>QUANTITY</h4>
@@ -21,4 +25,4 @@
     <option value="3">3</option>
     <option value="4">4</option>
 </select>
-<p><button type="button">Add to Cart</button></p>
+<p><button type="button" [routerLink]="['/toylist/toydetail/toyshoping',id]">Add to Cart</button></p>

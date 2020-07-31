@@ -4,16 +4,16 @@
 <div class="d-flex flex-row justify-content-center mt-5 mb-3">
   <h2 >Search Toy</h2>
   <select name="age" id="dd_age" class="ml-5">
-    <option value="volvo">Age</option>
-    <option value="saab">Todler</option>
-    <option value="opel">3-5</option>
-    <option value="audi">6-8</option>
+    <option value="age">Age</option>
+    <option value="todler">Todler</option>
+    <option value="3-5">3-5</option>
+    <option value="6-8">6-8</option>
   </select><br><br>
 
   <select name="dd_gender" id="dd_gender" class="ml-5">
-    <option value="volvo">Gender</option>
-    <option value="volvo">Male</option>
-    <option value="saab">Female</option>
+    <option value="gender">Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
     <option value="neutral">Neutral</option>
 
   </select><br><br>
@@ -46,8 +46,8 @@
         </thead>
         <tbody>
           <tr *ngFor="let i of toylist ; let num = index">
-            <th [routerLink]="['/toylist/toydetail',num]"> {{i.name}}</th>
-            <th> {{i.price}} </th>
+            <th id="toy_name" [routerLink]="['/toylist/toydetail',num]"> {{i.name}}</th>
+            <th > {{i.price}} </th>
             <th>{{i.age}}</th>
             <th>{{i.gender}}</th>
           </tr>
