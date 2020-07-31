@@ -1,8 +1,13 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    keywords/toy.robot
+Test Setup    
+Test Template    
+Test Teardown    
+
 
 *** Variables ***
-${Url}
+${URL}
 ${Actaul_Product_Name}     Les Dollie Toffee Apple  
 ${Product_Status}    toy_status
 ${Product_Price}    price

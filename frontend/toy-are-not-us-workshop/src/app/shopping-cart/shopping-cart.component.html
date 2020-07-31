@@ -1,42 +1,46 @@
 <!-- #######  THIS IS A COMMENT - Visible only in the source editor #########-->
 <h2>Shopping Cart</h2>
-<table>
+<div class="table-responsive" style="border: solid;">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Items</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
     <tbody>
-        <tr>
-            <th>Items</th>
-            <th>Quantity</th>
-            <th>Price</th>
-        </tr>
-        <tr>
-            <td> {{toy.name}} <br /><button type="button">Delete</button></td>
-            <td><select id="dd_toy_quantity" name="dd_toy_quantity">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select></td>
-            <td>{{toy.price}} $</td>
-        </tr>
-        <tr>
-            <!-- <td>TEST <br /><button type="button">Delete</button></td>
-            <td><select id="dd_toy_quantity" name="dd_toy_quantity">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select></td>
-            <td>100.0</td> -->
-        </tr>
+      <tr>
+        <td>{{ toy.name }} <br /><button type="button">Delete</button></td>
+        <td>
+          <select id="dd_toy_quantity" name="dd_toy_quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </td>
+        <td>{{ toy.price }} $</td>
+      </tr>
     </tbody>
-</table>
-<h4>Shipping Method : xxxx</h4>
+  </table>
+</div>
+<h4>Shipping Method : {{ shipname }}</h4>
 <!-- <form action=""> -->
-    <div *ngFor="let i of ship ; let num = index" >
-        <input  name="shipping_method" type="radio" value="num" (change)="onSelectionChange(num)" /> {{i.shipName}}<br />
-    </div>
-    <!-- <input name="shipping_method" type="radio" value="ems" /> EMS<br />v
+<div *ngFor="let i of ship; let num = index">
+  <input
+    name="shipping_method"
+    type="radio"
+    value="num"
+    (change)="onSelectionChange(num)"
+  />
+  {{ i.shipName }}<br />
+</div>
+<!-- <input name="shipping_method" type="radio" value="ems" /> EMS<br />v
     <input name="shipping_method" type="radio" value="lineman" /> Line Man -->
 <!-- </form> -->
-<h4>Subtotal ("1" items): {{toy.price}} $</h4>
-<h4  >Shipping Fee:{{price}} THB</h4>
-<button type="button" [routerLink]="['/toyshoping/shipaddress',id]">Process to Checkout</button>
+<h4>Subtotal (1 items): {{ toy.price }} $</h4>
+<h4>Shipping Fee: {{ price }} THB</h4>
+<button type="button" [routerLink]="['/toyshoping/shipaddress', id]">
+  Process to Checkout
+</button>

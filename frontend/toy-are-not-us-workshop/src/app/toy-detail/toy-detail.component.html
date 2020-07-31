@@ -9,10 +9,19 @@
         Name : 
     </b>
     <li class="ml-3" id="title_name">{{toy.name}}</li>
-    Gender : <li class="ml-3" id="gender">{{toy.gender}}</li>
-    Age :  <li class="ml-3" id="age" >{{toy.age}}</li>
-    Price :  <li class="ml-3" id="price">{{toy.price}}</li>
-    <b >Shipping Method: Cash on delivery</b>
+    <b>
+        Gender :
+    </b>
+    <li class="ml-3" id="gender">{{toy.gender}}</li>
+    <b>
+        Age : 
+    </b>
+     <li class="ml-3" id="age" >{{toy.age}}</li>
+     <b>
+        Price : 
+    </b>
+     <li class="ml-3" id="price">{{toy.price}}</li>
+    <span>Shipping Method: Cash on delivery</span>
     <br>
     <span *ngIf="toy.status" >In Stock</span>
     <span *ngIf="!toy.status" >Out Stock</span>
