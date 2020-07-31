@@ -23,13 +23,13 @@
     </h2>
     <div>
         <p>
-            Item(2) : price THB
+            {{toy.name}} : {{toy.price}} $
         </p>
         <p>
-            Shipping Fee : shipping price THB
+            Shipping Fee :  {{ship.shipFee}} THB
         </p>
         <p id="order_summary">
-            Order total : total_price THB
+            Order total : {{toy.price|calculate}} THB
         </p>
     </div>
 </div>
@@ -45,4 +45,4 @@
     <label for="re_line_pay">Line Pay</label>
 </form>
 
-<button type="button" id=btn_placeorder>Place your order</button>
+<button type="button" id=btn_placeorder [routerLink]="['/thankyou']">Place your order</button>

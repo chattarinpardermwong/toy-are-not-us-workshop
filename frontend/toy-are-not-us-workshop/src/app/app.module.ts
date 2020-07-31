@@ -12,6 +12,8 @@ import { ShippingDetailComponent } from './shipping-detail/shipping-detail.compo
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ShippingAddressComponent } from './shipping-address/shipping-address.component';
 import { PaymentComponent } from './payment/payment.component';
+import { CalculatePipe } from './pipes/calculate.pipe';
+import { ThankyouComponent } from './thankyou/thankyou.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { PaymentComponent } from './payment/payment.component';
     ShippingDetailComponent,
     ShoppingCartComponent,
     ShippingAddressComponent,
-    PaymentComponent
+    PaymentComponent,
+    CalculatePipe,
+    ThankyouComponent
   ],
   imports: [
     BrowserModule,

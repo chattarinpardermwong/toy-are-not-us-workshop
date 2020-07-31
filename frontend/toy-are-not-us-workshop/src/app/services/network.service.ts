@@ -33,13 +33,12 @@ export class NetworkService {
     return of(this.ship);
   }
 
-    
-  // getShipByid(id :number): Observable<Shipping> {
-  //   return of(this.ship.filter(
-  //       item => item.id == id)[0])
-  //   // return of(mockProduct);
-  //   // return this.http.get<Product[]>('http://165.22.255.58:3000/products');
-  // }
+  getShipByid(id :number): Observable<Shipping> {
+    return of(this.ship.filter(
+        item => item.id == id)[0])
+    // return of(mockProduct);
+    // return this.http.get<Product[]>('http://165.22.255.58:3000/products');
+  }
   getToyByID(id :number): Observable<Toy> {
     return of(this.toys.filter(
         item => item.id == id)[0])

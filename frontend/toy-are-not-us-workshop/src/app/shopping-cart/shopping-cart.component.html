@@ -41,6 +41,6 @@
 <!-- </form> -->
 <h4>Subtotal (1 items): {{ toy.price }} $</h4>
 <h4>Shipping Fee: {{ price }} THB</h4>
-<button type="button" [routerLink]="['/toyshoping/shipaddress', id]">
+<button type="button" [routerLink]="['/toyshoping/shipaddress', id,shipID]">
   Process to Checkout
 </button>

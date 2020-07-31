@@ -10,9 +10,11 @@ export class ShippingAddressComponent  {
 
   constructor(private activate:ActivatedRoute) { }
   id : number;
+  shipID : number;
   ngOnInit(): void {
     this.activate.params.subscribe(
       params=>{
+        this.shipID = params.shipID
         this.id = params.id;
       }
     )

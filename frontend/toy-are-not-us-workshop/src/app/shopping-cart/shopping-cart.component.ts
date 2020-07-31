@@ -21,9 +21,11 @@ export class ShoppingCartComponent implements OnInit {
   ) {}
   // @Input("toy-target") toyTarget : ToyDisplay;
   id: number;
+  
   ngOnInit(): void {
     this.activateRoute.params.subscribe((param) => {
       this.id = param.id;
+
       this.feedData(this.id);
     });
   }
