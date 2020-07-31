@@ -7,46 +7,43 @@ import { NetworkService } from '../services/network.service';
 @Component({
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',
-  styleUrls: ['./shopping-cart.component.css']
+  styleUrls: ['./shopping-cart.component.css'],
 })
 export class ShoppingCartComponent implements OnInit {
-  toy:Toy
-  ship :Shipping[]
-  shipID : number	;
-  price :number;
-  constructor(private activateRoute:ActivatedRoute , private network:NetworkService) { }
+  toy: Toy;
+  ship: Shipping[];
+  shipID: number;
+  price: number;
+  shipname: string;
+  constructor(
+    private activateRoute: ActivatedRoute,
+    private network: NetworkService
+  ) {}
   // @Input("toy-target") toyTarget : ToyDisplay;
-  id:number;
+  id: number;
   ngOnInit(): void {
-    this.activateRoute.params.subscribe(
-      param=>{
-        this.id = param.id;
-        this.feedData(this.id);
-
-      }
-    )
+    this.activateRoute.params.subscribe((param) => {
+      this.id = param.id;
+      this.feedData(this.id);
+    });
   }
 
-  feedData(id:number){
-     this.network.getToyByID(id).subscribe(
-       data=>{
-        //  console.log(data)
-         this.toy = data;
+  feedData(id: number) {
+    this.network.getToyByID(id).subscribe((data) => {
+      //  console.log(data)
+      this.toy = data;
       //  var {id, name,price,age,gender,quantity,status}  = {... data}
-
-       }
-     )
-     this.network.getShipping().subscribe(
-       data=>{
-         console.log(data)
-         this.ship = data;
-       }
-     )
+    });
+    this.network.getShipping().subscribe((data) => {
+      console.log(data);
+      this.ship = data;
+    });
   }
-  onSelectionChange(num:number){
-      this.shipID = num;
-      this.price = this.ship[num].shipFee
-      // console.log(typeof(this.shipID))
-      // console.log(this.shipID)
+  onSelectionChange(num: number) {
+    this.shipID = num;
+    this.price = this.ship[num].shipFee;
+    this.shipname = this.ship[num].shipName;
+    // console.log(typeof(this.shipID))
+    // console.log(this.shipID)
   }
 }
