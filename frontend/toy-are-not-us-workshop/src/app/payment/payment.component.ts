@@ -27,7 +27,6 @@ export class PaymentComponent implements OnInit {
   feedData(id:number){
     this.network.getToyByID(id).subscribe(
       data=>{
-        // console.log(id)
         this.toy = data;
      //  var {id, name,price,age,gender,quantity,status}  = {... data}
 
@@ -35,7 +34,6 @@ export class PaymentComponent implements OnInit {
     )
     this.network. getShipByid(id).subscribe(
       data=>{
-        // console.log(id)
         this.ship = data;
      //  var {id, name,price,age,gender,quantity,status}  = {... data}
 

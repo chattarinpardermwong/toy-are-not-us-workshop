@@ -8,7 +8,6 @@ import { PaymentComponent } from './payment/payment.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 
 const routes: Routes = [
-  // {path:'', redirectTo: '/toylist',pathMatch: 'full'},
 
   {path:'toylist/toydetail/:id', component: ToyDetailComponent},
   {path:'toylist', component: ToyListComponent},

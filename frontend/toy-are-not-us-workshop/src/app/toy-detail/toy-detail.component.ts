@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute, Event } from '@angular/router';
 import { ToyDisplay, Toy } from '../models/toy';
 import { NetworkService } from '../services/network.service';
 
@@ -9,13 +9,13 @@ import { NetworkService } from '../services/network.service';
   styleUrls: ['./toy-detail.component.css']
 })
 export class ToyDetailComponent implements OnInit {
-  toy : Toy;
-  constructor(private activateRoute:ActivatedRoute , private network:NetworkService) { }
-  // @Input("toy-target") toyTarget : ToyDisplay;
-  id:number;
+  toy: Toy;
+
+  constructor(private activateRoute: ActivatedRoute, private network: NetworkService) { }
+  id: number;
   ngOnInit(): void {
     this.activateRoute.params.subscribe(
-      param=>{
+      param => {
         this.id = param.id;
         this.feedData(this.id);
 
@@ -23,19 +23,15 @@ export class ToyDetailComponent implements OnInit {
     )
   }
 
-  feedData(id:number){
-     this.network.getToyByID(id).subscribe(
-       data=>{
-         console.log(data)
-         this.toy = data;
-      //  var {id, name,price,age,gender,quantity,status}  = {... data}
+  feedData(id: number) {
+    this.network.getToyByID(id).subscribe(
+      data => {
+        this.toy = data;
+        //  var {id, name,price,age,gender,quantity,status}  = {... data}
 
-       }
-     )
+      }
+    )
   }
-
-
-
 
 
 

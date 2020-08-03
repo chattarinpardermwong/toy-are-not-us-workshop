@@ -28,12 +28,7 @@
 <h4>Shipping Method : {{ shipname }}</h4>
 <!-- <form action=""> -->
 <div *ngFor="let i of ship; let num = index">
-  <input
-    name="shipping_method"
-    type="radio"
-    value="num"
-    (change)="onSelectionChange(num)"
-  />
+  <input name="shipping_method" type="radio" value="num" (change)="onSelectionChange(num)" />
   {{ i.shipName }}<br />
 </div>
 <!-- <input name="shipping_method" type="radio" value="ems" /> EMS<br />v
@@ -41,6 +36,6 @@
 <!-- </form> -->
 <h4>Subtotal (1 items): {{ toy.price }} $</h4>
 <h4>Shipping Fee: {{ price }} THB</h4>
-<button type="button" [routerLink]="['/toyshoping/shipaddress', id,shipID]">
+<button type="button" [routerLink]="['/toyshoping/shipaddress', id,shipID] ">
   Process to Checkout
 </button>

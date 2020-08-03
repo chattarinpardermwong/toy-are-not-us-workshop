@@ -1,15 +1,16 @@
-
-
+<!-- <app-toy-list (status)="setStatus()" *ngIf ="status"></app-toy-list> -->
 <app-toy-list></app-toy-list>
+<!-- <app-toy-list *ngIf="!router.includes('toylist')"></app-toy-list> -->
+
+<!-- <app-toy-list *ngIf="router == '/'"></app-toy-list> -->
+
+<div  class="container mt-3">
+    <router-outlet></router-outlet>
+</div>
+
 
 <!-- <span [routerLink]="['/toylist']" >A</span> -->
 <!-- <app-toy-detail></app-toy-detail> -->
 
 <!-- <app-toy-detail></app-toy-detail> -->
 <!-- <div class="container"> -->
-    <div  class="container mt-3">
-        <router-outlet></router-outlet>
-
-    </div>
-
-<!-- </div> -->

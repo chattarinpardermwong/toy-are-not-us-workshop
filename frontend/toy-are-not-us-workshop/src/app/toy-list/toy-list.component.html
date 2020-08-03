@@ -2,32 +2,38 @@
 <!-- <h2 class="ml-5 mt-3">Search Toy</h2> -->
 
 <div class="d-flex flex-row justify-content-center mt-5 mb-3">
+  <form #seachForm="ngForm" (submit)="searchToy(seachForm)">
+
   <h2 >Search Toy</h2>
-  <select name="age" id="dd_age" class="ml-5">
-    <option value="age">Age</option>
-    <option value="todler">Todler</option>
-    <option value="3-5">3-5</option>
-    <option value="6-8">6-8</option>
+  <!-- <input ngModel name="name" id="dd_age"  class="ml-5"> -->
+
+ Age :<select  name="age" id="dd_age" ngModel  class="ml-5">
+    <!-- <option value="Age">Age</option> -->
+    <option value="Todler">Todler</option>
+    <option value="3_to_5">3-5</option>
+    <option value="6_to_8">6-8</option>
   </select><br><br>
 
-  <select name="dd_gender" id="dd_gender" class="ml-5">
-    <option value="gender">Gender</option>
-    <option value="male">Male</option>
-    <option value="female">Female</option>
-    <option value="neutral">Neutral</option>
+  Gender :<select name="gender" id="dd_gender" ngModel class="ml-4">
+    <!-- <option value="Gender">Gender</option> -->
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Neutral">Neutral</option>
 
   </select><br><br>
 
-  <button class="ml-5 pl-4 pr-4  " id="btn_search">
+  <button type="submit" class="ml-5 pl-4 pr-4 " id="btn_search"   >
     Search
   </button>
+</form>
+
 </div>
 
 
 <div class="card">
   <div class="card-body">
     <div class="row">
-      <div class="col-md-2 mb-2">Search Toy:</div>
+      <div class="col-md-2 mb-2" >Search Toy:</div>
       <div class="col-md-4">
       </div>
     </div>
@@ -46,7 +52,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let i of toylist ; let num = index">
-            <th id="toy_name" [routerLink]="['/toylist/toydetail',num]"> {{i.name}}</th>
+            <th id="toy_name"  [routerLink]="['/toylist/toydetail',num]"> {{i.name}}</th>
             <th > {{i.price}} </th>
             <th>{{i.age}}</th>
             <th>{{i.gender}}</th>
